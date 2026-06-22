@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { Reveal } from "./Reveal";
 
 const steps = [
@@ -25,10 +28,14 @@ const steps = [
 
 export function Process() {
   return (
-    <section id="process" className="section-padding">
+    <section id="process" className="section-padding bg-surface-soft">
       <div className="container-main">
         <Reveal className="text-center max-w-2xl mx-auto mb-16">
-          <p className="caption-uppercase mb-4 text-maroon">How It Works</p>
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="maroon-line" />
+            <p className="caption-uppercase text-maroon">How It Works</p>
+            <div className="maroon-line" />
+          </div>
           <h2 className="display-lg mb-5">From concept to delivery</h2>
           <p className="text-body leading-relaxed">
             A streamlined process designed to bring your packaging vision to life
@@ -37,22 +44,29 @@ export function Process() {
         </Reveal>
 
         <div className="relative">
-          <div className="hidden lg:block absolute top-12 left-[12.5%] right-[12.5%] h-px bg-hairline" />
+          <div className="hidden lg:block absolute top-12 left-[12.5%] right-[12.5%] process-line" />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((item, index) => (
-              <Reveal key={item.step} delay={index * 0.1}>
-                <article className="relative text-center lg:text-left">
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-maroon text-white font-headline text-lg mb-5 relative z-10">
+              <Reveal key={item.step} delay={index * 0.12}>
+                <motion.article
+                  whileHover={{ y: -6 }}
+                  transition={{ duration: 0.25 }}
+                  className="relative text-center lg:text-left group"
+                >
+                  <motion.div
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-maroon text-white font-headline text-lg font-bold mb-5 relative z-10 shadow-maroon"
+                  >
                     {item.step}
-                  </div>
-                  <h3 className="font-headline text-xl text-ink mb-3">
+                  </motion.div>
+                  <h3 className="font-headline text-xl font-bold text-ink mb-3 group-hover:text-maroon transition-colors duration-300">
                     {item.title}
                   </h3>
                   <p className="text-sm text-body leading-relaxed">
                     {item.description}
                   </p>
-                </article>
+                </motion.article>
               </Reveal>
             ))}
           </div>

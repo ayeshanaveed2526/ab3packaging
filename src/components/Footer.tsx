@@ -22,11 +22,11 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="bg-charcoal text-on-dark-soft pt-16 pb-8">
+    <footer className="bg-charcoal text-on-dark-soft pt-16 pb-8 border-t border-charcoal-soft">
       <div className="container-main">
         <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
           <div className="sm:col-span-2 lg:col-span-2">
-            <a href="#" className="flex items-center gap-3 mb-5">
+            <a href="#" className="flex items-center gap-3 mb-5 group">
               <div className="relative h-12 w-12">
                 <Image
                   src="/logo.jpeg"
@@ -36,10 +36,10 @@ export function Footer() {
                 />
               </div>
               <div>
-                <span className="block font-headline text-xl text-on-dark">
+                <span className="block font-headline text-xl font-bold text-on-dark">
                   AB3 Packaging
                 </span>
-                <span className="caption-uppercase text-2xs">
+                <span className="caption-uppercase text-2xs text-maroon-muted">
                   Premium Solutions
                 </span>
               </div>
@@ -52,7 +52,7 @@ export function Footer() {
 
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title}>
-              <h4 className="text-sm font-medium text-on-dark mb-4">
+              <h4 className="text-sm font-bold text-on-dark mb-4">
                 {title}
               </h4>
               <ul className="space-y-3">
@@ -60,7 +60,7 @@ export function Footer() {
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="text-sm hover:text-on-dark transition-colors"
+                      className="text-sm hover:text-maroon-muted transition-colors"
                     >
                       {link.label}
                     </a>
@@ -71,7 +71,7 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="gold-line mb-8" />
+        <div className="h-px bg-charcoal-soft mb-8" />
 
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm">
           <p>&copy; {new Date().getFullYear()} AB3 Packaging. All rights reserved.</p>

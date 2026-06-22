@@ -31,7 +31,10 @@ export function Navbar() {
 
   return (
     <>
-      <header
+      <motion.header
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled ? "nav-scrolled" : "bg-transparent"
         }`}
@@ -39,7 +42,7 @@ export function Navbar() {
         <nav className="container-main flex h-16 md:h-18 items-center justify-between">
           <a href="#" className="flex items-center gap-3 group">
             <motion.div
-              whileHover={{ scale: 1.04 }}
+              whileHover={{ scale: 1.06, rotate: 3 }}
               transition={{ type: "spring", stiffness: 400 }}
               className="relative h-11 w-11 md:h-12 md:w-12 shrink-0"
             >
@@ -52,7 +55,7 @@ export function Navbar() {
               />
             </motion.div>
             <div className="hidden sm:block leading-tight">
-              <span className="block font-headline text-xl font-medium text-maroon tracking-tight">
+              <span className="block font-headline text-xl font-bold text-maroon tracking-tight">
                 AB3
               </span>
               <span className="caption-uppercase text-2xs text-muted">
@@ -66,9 +69,10 @@ export function Navbar() {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="text-sm font-medium text-body hover:text-maroon transition-colors"
+                  className="relative text-sm font-semibold text-body hover:text-maroon transition-colors group"
                 >
                   {link.label}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-maroon transition-all duration-300 group-hover:w-full" />
                 </a>
               </li>
             ))}
@@ -88,7 +92,7 @@ export function Navbar() {
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen(!menuOpen)}
-            className="lg:hidden relative z-50 flex h-10 w-10 items-center justify-center rounded-md border border-hairline bg-canvas"
+            className="lg:hidden relative z-50 flex h-10 w-10 items-center justify-center rounded-md border border-hairline bg-surface-card"
           >
             <span className="sr-only">Menu</span>
             <div className="flex flex-col gap-1.5 w-5">
@@ -107,7 +111,7 @@ export function Navbar() {
             </div>
           </button>
         </nav>
-      </header>
+      </motion.header>
 
       <AnimatePresence>
         {menuOpen && (
@@ -122,18 +126,19 @@ export function Navbar() {
               <motion.a
                 key={link.href}
                 href={link.href}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.06 }}
+                exit={{ opacity: 0, y: 20 }}
+                transition={{ delay: i * 0.06, ease: [0.22, 1, 0.36, 1] }}
                 onClick={() => setMenuOpen(false)}
-                className="font-headline text-3xl text-ink"
+                className="font-headline text-3xl font-bold text-ink hover:text-maroon transition-colors"
               >
                 {link.label}
               </motion.a>
             ))}
             <motion.a
               href="#contact"
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.35 }}
               onClick={() => setMenuOpen(false)}

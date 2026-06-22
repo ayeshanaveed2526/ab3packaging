@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, DM_Sans } from "next/font/google";
+import { DM_Sans, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
+const plusJakarta = Plus_Jakarta_Sans({
+  variable: "--font-plus-jakarta",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "AB3 Packaging",
     description: "Premium food-grade and luxury packaging solutions",
-    images: ["/products-showcase.png"],
+    images: ["/hero-showcase.png"],
   },
 };
 
@@ -41,7 +41,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${dmSans.variable} h-full`}>
+    <html lang="en" className={`${plusJakarta.variable} ${dmSans.variable} h-full`}>
       <body className="min-h-full antialiased">{children}</body>
     </html>
   );

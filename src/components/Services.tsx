@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { Reveal, StaggerContainer, StaggerItem } from "./Reveal";
 
 const services = [
@@ -54,10 +57,14 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="section-padding bg-surface-soft">
+    <section id="services" className="section-padding">
       <div className="container-main">
         <Reveal className="text-center max-w-2xl mx-auto mb-16">
-          <p className="caption-uppercase mb-4 text-maroon">What We Do</p>
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="maroon-line" />
+            <p className="caption-uppercase text-maroon">What We Do</p>
+            <div className="maroon-line" />
+          </div>
           <h2 className="display-lg mb-5">Packaging solutions for every industry</h2>
           <p className="text-body leading-relaxed">
             Whether you need food-safe containers or luxury perfume presentation,
@@ -66,12 +73,20 @@ export function Services() {
           </p>
         </Reveal>
 
-        <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {services.map((service) => (
             <StaggerItem key={service.title}>
-              <article className="feature-card h-full flex flex-col group hover:shadow-soft transition-shadow duration-300">
-                <div className="text-maroon mb-5">{service.icon}</div>
-                <h3 className="font-headline text-xl text-ink mb-3">
+              <motion.article
+                whileHover={{ y: -8, transition: { duration: 0.25 } }}
+                className="feature-card h-full flex flex-col group hover:shadow-elevated hover:border-maroon/20 transition-all duration-300"
+              >
+                <motion.div
+                  whileHover={{ rotate: [0, -5, 5, 0], transition: { duration: 0.4 } }}
+                  className="w-12 h-12 rounded-lg bg-maroon-soft flex items-center justify-center text-maroon mb-5"
+                >
+                  {service.icon}
+                </motion.div>
+                <h3 className="font-headline text-xl font-bold text-ink mb-3">
                   {service.title}
                 </h3>
                 <p className="text-sm leading-relaxed text-body flex-1 mb-5">
@@ -81,13 +96,13 @@ export function Services() {
                   {service.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-xs font-medium px-3 py-1 rounded-full bg-canvas text-muted border border-hairline"
+                      className="text-xs font-semibold px-3 py-1 rounded-full bg-surface-soft text-muted border border-hairline"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
-              </article>
+              </motion.article>
             </StaggerItem>
           ))}
         </StaggerContainer>
