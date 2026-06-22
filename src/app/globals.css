@@ -1,26 +1,271 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --maroon: #7b1e3c;
+  --maroon-active: #5e162f;
+  --maroon-soft: #f5e8ec;
+  --maroon-muted: #c9a0ae;
+
+  --ink: #141413;
+  --body: #3d3d3a;
+  --body-strong: #252523;
+  --muted: #6c6a64;
+  --muted-soft: #8e8b82;
+
+  --canvas: #faf9f5;
+  --surface-soft: #f5f0e8;
+  --surface-card: #efe9de;
+  --surface-cream-strong: #e8e0d2;
+
+  --charcoal: #1f1e1b;
+  --charcoal-elevated: #2a2825;
+  --charcoal-soft: #3d3a36;
+
+  --hairline: #e6dfd8;
+  --hairline-soft: #ebe6df;
+
+  --on-primary: #ffffff;
+  --on-dark: #faf9f5;
+  --on-dark-soft: #a09d96;
+
+  --gold-accent: #b8956a;
+  --forest: #2d4a3e;
+
+  --shadow-soft: 0 4px 24px rgba(20, 20, 19, 0.06);
+  --shadow-elevated: 0 12px 48px rgba(20, 20, 19, 0.12);
+
+  --section: 96px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-maroon: var(--maroon);
+  --color-maroon-active: var(--maroon-active);
+  --color-maroon-soft: var(--maroon-soft);
+  --color-maroon-muted: var(--maroon-muted);
+  --color-ink: var(--ink);
+  --color-body: var(--body);
+  --color-muted: var(--muted);
+  --color-muted-soft: var(--muted-soft);
+  --color-canvas: var(--canvas);
+  --color-surface-soft: var(--surface-soft);
+  --color-surface-card: var(--surface-card);
+  --color-charcoal: var(--charcoal);
+  --color-charcoal-elevated: var(--charcoal-elevated);
+  --color-charcoal-soft: var(--charcoal-soft);
+  --color-hairline: var(--hairline);
+  --color-on-dark: var(--on-dark);
+  --color-on-dark-soft: var(--on-dark-soft);
+  --color-gold: var(--gold-accent);
+  --color-forest: var(--forest);
+  --shadow-soft: var(--shadow-soft);
+  --shadow-elevated: var(--shadow-elevated);
+  --font-headline: var(--font-cormorant), Georgia, serif;
+  --font-sans: var(--font-dm-sans);
+  --text-2xs: 0.625rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--canvas);
+  color: var(--body);
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--maroon-soft);
+  color: var(--maroon);
+}
+
+.display-xl {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+
+.display-lg {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.display-md {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+
+.caption-uppercase {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 44px;
+  padding: 0 1.5rem;
+  background: var(--maroon);
+  color: var(--on-primary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: var(--radius-md);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-primary:active {
+  background: var(--maroon-active);
+  transform: scale(0.98);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 44px;
+  padding: 0 1.5rem;
+  background: transparent;
+  color: var(--ink);
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.btn-secondary:hover {
+  border-color: var(--maroon-muted);
+  background: var(--maroon-soft);
+}
+
+.btn-secondary-on-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 44px;
+  padding: 0 1.5rem;
+  background: var(--charcoal-elevated);
+  color: var(--on-dark);
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: var(--radius-md);
+  transition: background 0.2s ease;
+}
+
+.section-padding {
+  padding-top: var(--section);
+  padding-bottom: var(--section);
+}
+
+.container-main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.feature-card {
+  background: var(--surface-card);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+}
+
+.dark-card {
+  background: var(--charcoal);
+  border-radius: var(--radius-lg);
+  color: var(--on-dark);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.hero-gradient {
+  background: radial-gradient(
+      ellipse 80% 60% at 70% 40%,
+      rgba(123, 30, 60, 0.08) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 50% 40% at 20% 80%,
+      rgba(45, 74, 62, 0.06) 0%,
+      transparent 50%
+    ),
+    var(--canvas);
+}
+
+.gold-line {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--gold-accent),
+    transparent
+  );
+}
+
+.product-frame {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-elevated);
+}
+
+.product-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(184, 149, 106, 0.2);
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.nav-scrolled {
+  background: rgba(250, 249, 245, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--hairline);
+  box-shadow: var(--shadow-soft);
 }

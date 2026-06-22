@@ -1,0 +1,7 @@
+{
+  "tailwindCSS.experimental.configFile": "src/app/globals.css",
+  "tailwindCSS.classAttributes": ["class", "className", "ngClass"],
+  "editor.quickSuggestions": {
+    "strings": "on"
+  }
+}
