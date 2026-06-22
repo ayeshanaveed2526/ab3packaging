@@ -14,7 +14,7 @@ const services = [
     ),
     title: "Food-Grade Packaging",
     description:
-      "FDA-compliant containers, tubes, and boxes for food, beverages, and health products. Safe materials with barrier coatings and tamper-evident seals.",
+      "FDA-compliant round tubes and cylindrical containers for food, beverages, and health products. Safe materials with barrier coatings and tamper-evident seals.",
     tags: ["FDA Compliant", "Barrier Films", "Custom Sizes"],
   },
   {
@@ -26,7 +26,7 @@ const services = [
     ),
     title: "Luxury & Perfume Packaging",
     description:
-      "Embossed cylindrical tubes, rigid boxes, and premium gift sets with metallic finishes, foil stamping, and soft-touch coatings for high-end brands.",
+      "Embossed cylindrical tubes, round rigid containers, and premium gift tubes with metallic finishes, foil stamping, and soft-touch coatings for high-end brands.",
     tags: ["Gold Foil", "Metal Caps", "Embossing"],
   },
   {
@@ -36,9 +36,9 @@ const services = [
         <path d="M6 11h16M11 6v5M17 6v5" stroke="currentColor" strokeWidth="1.5" />
       </svg>
     ),
-    title: "Custom Retail Packaging",
+    title: "Custom Retail Tubes",
     description:
-      "Bespoke folding cartons, display boxes, and shelf-ready packaging tailored to your brand identity — from concept sketches to production runs.",
+      "Bespoke round display tubes, cylindrical shelf-ready packaging, and branded paper tubes tailored to your identity — from concept sketches to production runs.",
     tags: ["Brand Design", "Prototyping", "Bulk Orders"],
   },
   {
@@ -50,7 +50,7 @@ const services = [
     ),
     title: "Cosmetic & Personal Care",
     description:
-      "Elegant packaging for skincare, cosmetics, and wellness products — pump bottles, jars, sachets, and multi-component sets with premium unboxing.",
+      "Elegant round tubes and jars for skincare, cosmetics, and wellness products — cylindrical bottles, round jars, and multi-component tube sets with premium unboxing.",
     tags: ["Pump Systems", "Glass Inserts", "Sustainable Options"],
   },
 ];

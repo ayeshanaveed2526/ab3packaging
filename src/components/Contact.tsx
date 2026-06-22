@@ -34,19 +34,19 @@ export function Contact() {
               {[
                 {
                   label: "Email",
-                  value: "hello@ab3packaging.com",
-                  href: "mailto:hello@ab3packaging.com",
+                  value: "mdsab3@gmail.com",
+                  href: "mailto:mdsab3@gmail.com",
                   icon: "M4 6h16v12H4V6zm0 0l8 6 8-6",
                 },
                 {
                   label: "Phone",
-                  value: "+1 (555) 123-4567",
-                  href: "tel:+15551234567",
+                  value: "0333-4433015",
+                  href: "tel:03334433015",
                   icon: "M6 4h4l2 5-2.5 1.5a11 11 0 005 5L17 13l5 2v4a2 2 0 01-2 2A14 14 0 014 6z",
                 },
                 {
                   label: "Location",
-                  value: "Industrial District, Your City",
+                  value: "Near Jallo, Lahore Pakistan",
                   href: undefined,
                   icon: "M14 6a4 4 0 00-4 4c0 3 4 8 4 8s4-5 4-8a4 4 0 00-4-4z",
                 },
@@ -157,7 +157,7 @@ export function Contact() {
                       <option value="food">Food-Grade Packaging</option>
                       <option value="perfume">Perfume & Luxury</option>
                       <option value="cosmetic">Cosmetics & Personal Care</option>
-                      <option value="retail">Custom Retail Boxes</option>
+                      <option value="retail">Custom Retail Tubes</option>
                       <option value="other">Other / Not Sure</option>
                     </select>
                   </div>

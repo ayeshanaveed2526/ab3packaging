@@ -28,7 +28,7 @@ const steps = [
 
 export function Process() {
   return (
-    <section id="process" className="section-padding bg-surface-soft">
+    <section id="process" className="section-padding bg-surface-soft/90">
       <div className="container-main">
         <Reveal className="text-center max-w-2xl mx-auto mb-16">
           <div className="flex items-center justify-center gap-3 mb-4">

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://ab3packaging.com"),
   title: "AB3 Packaging | Premium Food-Grade & Luxury Packaging",
   description:
-    "AB3 Packaging crafts elegant, food-grade and luxury packaging solutions — from perfume tubes to bespoke retail boxes. Precision manufacturing with premium finishes.",
+    "AB3 Packaging crafts elegant round, food-grade and luxury tube packaging — from perfume cylinders to bespoke gift tubes. Precision manufacturing with premium finishes.",
   keywords: [
     "packaging",
     "food grade packaging",
@@ -32,6 +32,11 @@ export const metadata: Metadata = {
     title: "AB3 Packaging",
     description: "Premium food-grade and luxury packaging solutions",
     images: ["/hero-showcase.png"],
+  },
+  icons: {
+    icon: [{ url: "/logo.jpeg", type: "image/jpeg" }],
+    apple: "/logo.jpeg",
+    shortcut: "/logo.jpeg",
   },
 };
 
